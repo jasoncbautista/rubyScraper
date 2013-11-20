@@ -9,16 +9,27 @@ doc = Nokogiri::HTML(open('http://www.ufc.com/fighter/Weight_Class/Bantamweight?
 
 ####
 # Search for nodes by css
-doc.css('tr.fighter').each do |link|
+doc.css('tr.fighter').each do |fighterCard|
     # puts link.content
     # Find fighter names:
-    names = link.css('a.fighter-name')
+    names = fighterCard.css('a.fighter-name')
 
     puts names.first.content
 
+    cells = fighterCard.css(".cell-inner")
+
+    # [0] = Name 
+    # [1] = Record 
+    # [2] = Height
+    # [3] = Weight
+
+    recordCell = cells[1]
+    heightCell = cells[2]
+    weightCell = cells[3]
 
 
-    
+    puts weightCell
+
 
 end
 
