@@ -18,6 +18,8 @@ doc.css('tr.fighter').each do |link|
         puts nameLink.content
     end
     
+    puts names.first
+
 
 
     
