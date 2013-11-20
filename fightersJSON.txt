@@ -1,0 +1,21 @@
+ {  fighters: [ 
+ {   'name' :  "Dustin Kimura", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Vaughan Lee", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Lucas Martins", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Michael McDonald", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Ivan Menjivar", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Yaotzin Meza", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Takeya Mizugaki", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Dustin Pague", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Erik Perez", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Sergio Pettis", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Nam Phan", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Brad Pickett", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Wilson Reis", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Francisco Rivera", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "George Roop", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Shunichi Shimizu", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Motonobu Tezuka", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Hugo Viana", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+  ,   {   'name' :  "Eddie Wineland", 'weight': 135 lbs, 'height': ( 61 kg ) } 
+    ] }

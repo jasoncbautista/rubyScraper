@@ -3,45 +3,67 @@ require 'open-uri'
 
 # Get a Nokogiri::HTML::Document for the page we’re interested in...
 
-doc = Nokogiri::HTML(open('http://www.ufc.com/fighter/Weight_Class/Bantamweight?offset=20&max=20&sort=lastName&order=asc'))
 
-# Do funky things with it using Nokogiri::XML::Node methods...
+myFile = "./fightersJSON.txt"
+ File.open(myFile, 'w') { |file|
+     file.write(" {  fighters: [ \n") 
+ 
+     fighterCount = 0
 
-####
-# Search for nodes by css
-doc.css('tr.fighter').each do |fighterCard|
-    # puts link.content
-    # Find fighter names:
+    doc = Nokogiri::HTML(open('http://www.ufc.com/fighter/Weight_Class/Bantamweight?offset=20&max=20&sort=lastName&order=asc'))
 
+    # Do funky things with it using Nokogiri::XML::Node methods...
 
-    begin
-        names = fighterCard.css('a.fighter-name')
+    ####
+    # Search for all the fighters in the page
+    doc.css('tr.fighter').each do |fighterCard|
+        begin
+        # Find fighter names:
+            names = fighterCard.css('a.fighter-name')
 
-        puts names.first.content
+            name = names.first.content
 
-        cells = fighterCard.css(".cell-inner")
+            cells = fighterCard.css(".cell-inner")
 
-        # [0] = Name 
-        # [1] = Record 
-        # [2] = Height
-        # [3] = Weight
+            # Get other MISC info:
+            
+            # [0] = Name 
+            # [1] = Record 
+            # [2] = Height
+            # [3] = Weight
 
-        recordCell = cells[1]
-        heightCell = cells[2]
-        weightCell = cells[3]
-
-
-        weightLB = weightCell.css(".main-txt").first.content
-        puts weightLB
-
-        heightCM = weightCell.css(".sub-txt").first.content
-        puts heightCM 
-
+            recordCell = cells[1]
+            heightCell = cells[2]
+            weightCell = cells[3]
 
 
-    rescue
-        puts "Bad node"
+            # Extract the weight
+            weightLB = weightCell.css(".main-txt").first.content
+
+            # Extract the height:
+            heightCM = weightCell.css(".sub-txt").first.content
+
+            
+            # Prepare js
+            jsonName = " 'name' :  \"" + name.strip + "\""
+            jsonWeight = ", 'weight': " + weightLB.strip
+            jsonHeight= ", 'height': " + heightCM.strip
+            str = jsonName + jsonWeight + jsonHeight
+
+            # Write out to file (as json)
+            if fighterCount != 0 
+            file.write(" ,  ") 
+            end
+            file.write(" {  ") 
+            file.write(str)
+            file.write(" } \n ") 
+            fighterCount+=1
+        rescue
+            puts "Bad node"
+        end
+
     end
 
-end
 
+    file.write("   ] }\n") 
+ }
