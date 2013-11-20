@@ -10,6 +10,17 @@ doc = Nokogiri::HTML(open('http://www.ufc.com/fighter/Weight_Class/Bantamweight?
 ####
 # Search for nodes by css
 doc.css('tr.fighter').each do |link|
-    puts link.content
+    # puts link.content
+    # Find fighter names:
+    names = link.css('a.fighter-name')
+
+    names.each do |nameLink|
+        puts nameLink.content
+    end
+    
+
+
+    
+
 end
 
