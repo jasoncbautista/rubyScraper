@@ -31,8 +31,14 @@ doc.css('tr.fighter').each do |fighterCard|
         weightCell = cells[3]
 
 
-        lbWeight = weightCell.css(".main-txt").first.content
-        puts lbWeight
+        weightLB = weightCell.css(".main-txt").first.content
+        puts weightLB
+
+        heightCM = weightCell.css(".sub-txt").first.content
+        puts heightCM 
+
+
+
     rescue
         puts "Bad node"
     end
