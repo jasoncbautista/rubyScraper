@@ -14,11 +14,7 @@ doc.css('tr.fighter').each do |link|
     # Find fighter names:
     names = link.css('a.fighter-name')
 
-    names.each do |nameLink|
-        puts nameLink.content
-    end
-    
-    puts names.first
+    puts names.first.content
 
 
 
