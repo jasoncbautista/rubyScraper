@@ -1,6 +1,11 @@
 require 'nokogiri'
 require 'open-uri'
 
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+# HERE be dragons: 
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
 # Get a Nokogiri::HTML::Document for the page we’re interested in...
 
 
@@ -13,7 +18,7 @@ myFile = "./jsonFighters.txt"
     ii = 0
     max = 2
 
-
+    dataString = ""
     while ii < max do
         offset = 20*ii
         ii+=1
@@ -48,32 +53,45 @@ myFile = "./jsonFighters.txt"
                 weightLB = weightCell.css(".main-txt").first.content
 
                 # Extract the height:
-                heightCM = weightCell.css(".sub-txt").first.content
+                heightCM = heightCell.css(".sub-txt").first.content
 
                 
-                # Prepare js
-                jsonName = " 'name' :  \"" + name.strip + "\""
+                # Prepare json
+                firstName= name.strip.split(" ")[0]
+                lastName= name.strip.split(" ")[1]
+                jsonFirstName = " 'first_name' :  \"" + firstName+ "\""
+                jsonLastName = " 'last_name' :  \"" + lastName + "\""
                 jsonWeight = ", 'weight': \"" + weightLB.strip + "\""
                 jsonHeight= ", 'height': \"" + heightCM.strip + "\""
-                str = jsonName + jsonWeight + jsonHeight
+                str = jsonFirstName + jsonLastName + jsonWeight + jsonHeight
+
 
                 # Write out to file (as json)
                 if fighterCount != 0 
                     file.write(" ,  ") 
+                    dataString+= ", "
                 end
-                puts name
+                
+                # Saving our data t be put into 
+                dataString += "{" + str + "}"
+
 
                 file.write(" {  ") 
                 file.write(str)
                 file.write(" } \n ") 
                 fighterCount+=1
             rescue
-                puts "Bad node"
+                #puts "Bad node"
             end
-
+            
         end
 
+        # Need to make sure we dont abuse :
+        sleep(3) # Sleep for a few  seconds
     end
+
+    toStdOutString = "{  fighters: [ " + dataString +  "] }"
+    puts toStdOutString
 
     file.write("   ] }\n") 
  }
