@@ -16,3 +16,12 @@ sudo gem install nokogiri
  ruby scrape.rb
 ```
 
+
+Or executable:
+
+```
+ chmod +x scrape.rb
+ ./scrape.rb
+
+```
+
