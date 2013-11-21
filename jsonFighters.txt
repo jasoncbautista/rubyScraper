@@ -1,0 +1,42 @@
+ {  fighters: [ 
+ {   'first_name' :  "Omari",  'last_name' :  "Akhmedov", 'weight': "185", 'height': "182" } 
+  ,   {   'first_name' :  "Yoshihiro",  'last_name' :  "Akiyama", 'weight': "170", 'height': "177" } 
+  ,   {   'first_name' :  "Alexandra",  'last_name' :  "Albu", 'weight': "135", 'height': "157" } 
+  ,   {   'first_name' :  "Ildemar",  'last_name' :  "Alcantara", 'weight': "170", 'height': "187" } 
+  ,   {   'first_name' :  "Iuri",  'last_name' :  "Alcantara", 'weight': "135", 'height': "167" } 
+  ,   {   'first_name' :  "Jose",  'last_name' :  "Aldo", 'weight': "145", 'height': "170" } 
+  ,   {   'first_name' :  "Thiago",  'last_name' :  "Alves", 'weight': "170", 'height': "175" } 
+  ,   {   'first_name' :  "Adlan",  'last_name' :  "Amagov", 'weight': "170", 'height': "187" } 
+  ,   {   'first_name' :  "Jessica",  'last_name' :  "Andrade", 'weight': "135", 'height': "160" } 
+  ,   {   'first_name' :  "Viscardi",  'last_name' :  "Andrade", 'weight': "170", 'height': "182" } 
+  ,   {   'first_name' :  "Dylan",  'last_name' :  "Andrews", 'weight': "185", 'height': "190" } 
+  ,   {   'first_name' :  "Felipe",  'last_name' :  "Arantes", 'weight': "145", 'height': "172" } 
+  ,   {   'first_name' :  "Igor",  'last_name' :  "Araujo", 'weight': "170", 'height': "185" } 
+  ,   {   'first_name' :  "Raphael",  'last_name' :  "Assuncao", 'weight': "135", 'height': "165" } 
+  ,   {   'first_name' :  "Seth",  'last_name' :  "Baczynski", 'weight': "170", 'height': "190" } 
+  ,   {   'first_name' :  "Ryan",  'last_name' :  "Bader", 'weight': "205", 'height': "187" } 
+  ,   {   'first_name' :  "Ali",  'last_name' :  "Bagautinov", 'weight': "125", 'height': "162" } 
+  ,   {   'first_name' :  "Siyar",  'last_name' :  "Bahadurzada", 'weight': "170", 'height': "180" } 
+  ,   {   'first_name' :  "Renan",  'last_name' :  "Barao", 'weight': "135", 'height': "167" } 
+  ,   {   'first_name' :  "Edson",  'last_name' :  "Barboza", 'weight': "155", 'height': "180" } 
+  ,   {   'first_name' :  "Luke",  'last_name' :  "Barnatt", 'weight': "185", 'height': "198" } 
+  ,   {   'first_name' :  "Josh",  'last_name' :  "Barnett", 'weight': "250", 'height': "190" } 
+  ,   {   'first_name' :  "Francimar",  'last_name' :  "Barroso", 'weight': "205", 'height': "185" } 
+  ,   {   'first_name' :  "Pat",  'last_name' :  "Barry", 'weight': "235", 'height': "180" } 
+  ,   {   'first_name' :  "Stephen",  'last_name' :  "Bass", 'weight': "145", 'height': "175" } 
+  ,   {   'first_name' :  "Johnny",  'last_name' :  "Bedford", 'weight': "135", 'height': "177" } 
+  ,   {   'first_name' :  "Alan",  'last_name' :  "Belcher", 'weight': "185", 'height': "187" } 
+  ,   {   'first_name' :  "Vitor",  'last_name' :  "Belfort", 'weight': "205", 'height': "182" } 
+  ,   {   'first_name' :  "Joseph",  'last_name' :  "Benavidez", 'weight': "125", 'height': "162" } 
+  ,   {   'first_name' :  "Lance",  'last_name' :  "Benoist", 'weight': "170", 'height': "180" } 
+  ,   {   'first_name' :  "Ryan",  'last_name' :  "Benoit", 'weight': "125", 'height': "165" } 
+  ,   {   'first_name' :  "Dennis",  'last_name' :  "Bermudez", 'weight': "145", 'height': "167" } 
+  ,   {   'first_name' :  "Michael",  'last_name' :  "Bisping", 'weight': "185", 'height': "187" } 
+  ,   {   'first_name' :  "Maximo",  'last_name' :  "Blanco", 'weight': "145", 'height': "172" } 
+  ,   {   'first_name' :  "Mark",  'last_name' :  "Bocek", 'weight': "155", 'height': "172" } 
+  ,   {   'first_name' :  "Tim",  'last_name' :  "Boetsch", 'weight': "185", 'height': "182" } 
+  ,   {   'first_name' :  "Stephan",  'last_name' :  "Bonnar", 'weight': "205", 'height': "193" } 
+  ,   {   'first_name' :  "Brian",  'last_name' :  "Bowles", 'weight': "135", 'height': "170" } 
+  ,   {   'first_name' :  "Roger",  'last_name' :  "Bowling", 'weight': "155", 'height': "175" } 
+  ,   {   'first_name' :  "Diego",  'last_name' :  "Brandao", 'weight': "145", 'height': "170" } 
+    ] }
