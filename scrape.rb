@@ -9,7 +9,7 @@ require 'open-uri'
 # Define some helper variables:
 fighterCount = 0
 ii = 0
-max = 2
+max = 28
 dataString = ""
 
 # Loop over multiple pages:

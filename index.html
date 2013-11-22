@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <style type="text/css">
+            .fighter{
+                border: 1px solid black;
+                padding: 5px;
+            }
+        </style>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="underscore.js"></script>
+        <script type="text/javascript" src="fighters.js"></script>
+        <script type="text/javascript">
+            console.log(fullList);
+
+            $(document).ready(function(){
+                var fighterEl = "<table border='1'>";
+                fighterEl +="<tr>";
+                fighterEl +="<th> First Name </th>";
+                fighterEl +="<th> Last Name </th>";
+                fighterEl +="<th> Weight (lb) </th>";
+                fighterEl +="<th> Height (cm) </th>";
+                fighterEl +="</tr>";
+
+                _.each(fullList.fighters, function(fighter) {
+                    console.log(fighter);
+                    fighterEl += "<tr>";
+                    fighterEl += "<td>" + fighter.first_name + "</td>";
+                    fighterEl += "<td>" + fighter.last_name+ "</td>";
+                    fighterEl += "<td>" + fighter.weight + "</td>";
+                    fighterEl += "<td>" + fighter.height+ "</td>";
+                    fighterEl += "</tr>";
+                });
+
+                fighterEl += "</table>";
+
+                $("body").append(fighterEl);
+            });
+            
+        </script>
+
+    </head>
+    <body>
+    </body>
+</html>
