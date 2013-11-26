@@ -9,7 +9,7 @@ require 'open-uri'
 # Define some helper variables:
 fighterCount = 0
 ii = 0
-max = 2
+max = 28
 dataString = ""
 
 # Loop over multiple pages:
@@ -44,7 +44,6 @@ while ii < max do
             # Extract image: 
             # imageURL =  imageCell.at_css("img.fighter-image")['src']
             imageURL =  imageCell.css("img.fighter-image").first['src']
-            puts imageURL
 
             # Extract the weight
             weightLB = weightCell.css(".main-txt").first.content.sub("lbs", "")
@@ -56,14 +55,13 @@ while ii < max do
             firstName= name.strip.split(" ")[0]
             lastName= name.strip.split(" ")[1]
 
-            jsonImage= " 'img' :  \"" + imageURL + "\""
-            jsonFirstName = " 'first_name' :  \"" + firstName+ "\""
-            jsonLastName = ",  'last_name' :  \"" + lastName + "\""
-            jsonWeight = ", 'weight': \"" + weightLB.strip + "\""
-            jsonHeight= ", 'height': \"" + heightCM.strip + "\""
-            str =   jsonImage + jsonFirstName + jsonLastName + jsonWeight + jsonHeight
+            jsonFirstName = "   'first_name' :  \"" + firstName+ "\""
+            jsonImage=      ",  'img' :  \"" + imageURL + "\""
+            jsonLastName =  ",  'last_name' :  \"" + lastName + "\""
+            jsonWeight =    ",  'weight': \"" + weightLB.strip + "\""
+            jsonHeight  =   ",  'height': \"" + heightCM.strip + "\""
+            str =    jsonFirstName  + jsonImage  + jsonLastName + jsonWeight + jsonHeight
 
-            puts str
             # Write out to file (as json)
             if fighterCount != 0 
                 dataString+= ", "
@@ -74,8 +72,8 @@ while ii < max do
 
             fighterCount+=1
         rescue
-            puts "Bad node"
-            puts $!, $@
+            # puts "Bad node"
+            # puts $!, $@
         end
     end
 
