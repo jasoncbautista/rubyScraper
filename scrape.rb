@@ -9,7 +9,7 @@ require 'open-uri'
 # Define some helper variables:
 fighterCount = 0
 ii = 0
-max = 28
+max = 2
 dataString = ""
 
 # Loop over multiple pages:
@@ -30,13 +30,21 @@ while ii < max do
 
             # Get other MISC info:
             
-            # [0] = Name 
+            # [0] = Name  and Photo 
             # [1] = Record 
             # [2] = Height
             # [3] = Weight
+
+            imageCell= cells[0]
+
             recordCell = cells[1]
             heightCell = cells[2]
             weightCell = cells[3]
+
+            # Extract image: 
+            # imageURL =  imageCell.at_css("img.fighter-image")['src']
+            imageURL =  imageCell.css("img.fighter-image").first['src']
+            puts imageURL
 
             # Extract the weight
             weightLB = weightCell.css(".main-txt").first.content.sub("lbs", "")
@@ -47,12 +55,15 @@ while ii < max do
             # Prepare json
             firstName= name.strip.split(" ")[0]
             lastName= name.strip.split(" ")[1]
+
+            jsonImage= " 'img' :  \"" + imageURL + "\""
             jsonFirstName = " 'first_name' :  \"" + firstName+ "\""
             jsonLastName = ",  'last_name' :  \"" + lastName + "\""
             jsonWeight = ", 'weight': \"" + weightLB.strip + "\""
             jsonHeight= ", 'height': \"" + heightCM.strip + "\""
-            str = jsonFirstName + jsonLastName + jsonWeight + jsonHeight
+            str =   jsonImage + jsonFirstName + jsonLastName + jsonWeight + jsonHeight
 
+            puts str
             # Write out to file (as json)
             if fighterCount != 0 
                 dataString+= ", "
@@ -63,7 +74,8 @@ while ii < max do
 
             fighterCount+=1
         rescue
-            #puts "Bad node"
+            puts "Bad node"
+            puts $!, $@
         end
     end
 
